@@ -8,7 +8,10 @@
 
 namespace Site;
 
+use Service\container\container;
 use Symfony\Component\Yaml\Yaml;
+use Service\Log\FileLogger;
+
 /*
 
 
@@ -28,7 +31,7 @@ class Application
 
     /**
      * Application constructor.
-     * @param $environment dev ou prod
+     * @param string $environment dev ou prod
      */
     public function __construct($environment)
     {
@@ -38,7 +41,8 @@ class Application
 
     }
 
-    private function config(){
+    private function config()
+    {
 
         $filename = __DIR__ . '/../../config/' . $this->environment . '/config.yml';
 
@@ -57,26 +61,36 @@ class Application
     /**
      * Lancement de l'application globale
      */
-    public function run(){
-
-        $this->log = new Logger;
+    public function run()
+    {
+        $log = new FileLogger();
+        $container = new container;
+        $container->add('logger', $log);
 
         $routeName = (!empty($_GET['page']))? $_GET['page'] : 'accueil';
-        $routeName = ($this->routing['routes'][$routeName])? $routeName : 'accueil';
-
-        $controllerClass = $this->routing['routes'][$routeName]['controller'];
-        $controllerMethod = $this->routing['routes'][$routeName]['action'];
-
-        $formation = new $controllerClass;
-        $formation->setLoger($this->log);
 
         try {
 
+            if (!array_key_exists($routeName, $this->routing['routes'])) {
+                throw new \Exception('Ce chemin n\'existe pas');
+            }
+
+            $controllerClass = $this->routing['routes'][$routeName]['controller'];
+            $controllerMethod = $this->routing['routes'][$routeName]['action'];
+
+
+            $formation = new $controllerClass;
+            $formation->setContainer($container);
+
+
             $formation->{$controllerMethod}();
 
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
 
-            echo 'Message: ' .$e->getMessage();
+            header('Location:ERREUR.php');
+            //echo 'Message: ' .$e->getMessage();
+            exit();
+           // var_dump($e);
 
         }
     }

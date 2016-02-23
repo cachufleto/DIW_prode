@@ -23,6 +23,8 @@ class Formation
     protected $stagiers = 12;
     /** @thematique string  */
     protected $thematique = 'PHPOO';
+    /** @log object  */
+    protected $container;
 
     /**
      * @param mixed $thematique
@@ -32,16 +34,15 @@ class Formation
         $this->thematique = $thematique;
     }
 
-    /* ******************************************************************** */
-
     public function homepageAction()
     {
 
-        $message =  ' Formation '.$this->nom;
-        // optimisation de l'appel de la class
-        // $log = new \Service\Log\FileLogger;
+       $message =  ' Formation '.$this->nom;
+       // optimisation de l'appel de la class
+       // $log = new \Service\Log\FileLogger;
 
-        $log->LogAction('Debug', $message);
+       var_dump($this->container);
+       $this->container->get('logger')->log('Debug', $message);
     }
 
 
@@ -50,9 +51,10 @@ class Formation
 
     }
 
-    public function setLoger($log)
+    public function setContainer($container)
     {
-        $this->log = $log;
+        $this->container = $container;
+        return $this;
     }
 }
 
