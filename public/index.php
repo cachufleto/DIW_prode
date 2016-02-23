@@ -25,4 +25,5 @@ require '../vendor/autoload.php';
 $app = new Site\Application;
 $app->run();
 */
+
 (new Site\Application('dev'))->run();

@@ -1,0 +1,7 @@
+routes:
+  accueil:
+    controller: '\App\Controller\formation'
+    action: 'homepageAction'
+  contact:
+   controller: '\App\Controller\formation'
+   action: 'homepageAction'

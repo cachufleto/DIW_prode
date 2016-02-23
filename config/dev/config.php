@@ -1,5 +1,5 @@
 <?php
-Array(
+return array(
     'environment' => Array (
         'bdd' => Array (
             'driver' => 'mysql',
@@ -10,19 +10,4 @@ Array(
             )
         )
     )
-);
-
-Array(
-    'connexion' => Array (
-        'controleur' =>  'mysql',
-        'action' => 'username'),
-    'newsletter' => Array (
-        'controleur' =>  'mysql',
-        'action' => 'username'),
-    'connexion' => Array (
-        'controleur' =>  'mysql',
-        'action' => 'username'),
-    'connexion' => Array (
-        'controleur' =>  'mysql',
-        'action' => 'username'),
 );

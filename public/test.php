@@ -7,6 +7,23 @@
  */
 
 
-require '../src/Service/Bd/Bd.php';
+class Address
+{
+    private $number;
+    private $street;
+    private $zipcode;
+    private $city;
 
-new \Service\Bd\Bd;
+    public function __construct($number, $street, $zipcode, $city)
+    {
+        $this->number = $number;
+        $this->street = $street;
+        $this->zipcode = $zipcode;
+        $this->city = $city;
+    }
+}
+
+class Person
+{
+    private $address;
+}

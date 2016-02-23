@@ -40,7 +40,7 @@ class Formation
         $message =  ' Formation '.$this->nom;
         // optimisation de l'appel de la class
         // $log = new \Service\Log\FileLogger;
-        $log = new Logger;
+
         $log->LogAction('Debug', $message);
     }
 
@@ -50,9 +50,9 @@ class Formation
 
     }
 
-    public function listeAction()
+    public function setLoger($log)
     {
-
+        $this->log = $log;
     }
 }
 
