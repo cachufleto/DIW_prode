@@ -1,0 +1,7 @@
+environment:
+  bdd:
+   driver: mysql
+   config:
+    username: root
+    password:
+    bdd: lokisalle

@@ -119,8 +119,9 @@ vendor
 /bin
 /composer
 /squizlabs
+/-/CodeSniffer
 /symfony
-//yaml
+/-/yaml
 
 
 

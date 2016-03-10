@@ -1,0 +1,93 @@
+# MVC
+ - markdown fichier extention .md
+
+## Pr�sentation
+
+Int�r�ts :
+ - S�paration de couches applicatives
+ - Clart�, regroupement de code
+ - Mod�les, Vues, Contr�leurs
+ - Maitenance du code par isolation des composants
+
+D�finition :
+ - Design pattern structurel permettant d'�viter le m�lange de concepts: vue, contr�les et logique m�tier.
+ - r�ponse fa�e a une problematique recurente.
+ - aspect technique de la r�curence.
+ - trouver une structure qui r�pond � la probl�matique en question qui pourra �tre appliqu� de maniere g�nerale.
+ - actuellement existe environ 500....
+ - fabrique, singleton....
+ - MVVM - 
+ - Mod�le - vue - bue -Mod�le (pp javascript qui possede une interaction de l'utilisateur)
+ 
+Compmosants:
+ - contr�leur : G�rer les entr�es / sorties HTTP d'un sc�nario nominal.
+	toute autre information appartient � un traitemet complementaire.
+	la re�criture ne fait pas partie du process.
+ - Mod�le : Classes m�tier.
+	la g�neration du formulaire n'est pas du m�tier.
+ - Vues : Affichage.
+
+## Utilisation
+
+### Exercice de localisation de fonctionnalit�s
+
+1. D�finition de l'url pour atteindre la page de recherche d'un livre
+2. Affichage du fomulaire de recherche
+3. R�cup�ration du titre du livre
+4. Validateurs associ�s au livre
+5. Requ�te SQL
+6. Redirection vers une page d'affichage d�taill�
+7. Quelle forme de don�es transmettre � la vue pour afficher le llivre et une photo des auteurs
+8. Comment r�cup�rer le nom (voire sa photo) de l'utilidsateur connect�
+
+Mod�les : 
+# il fait uniquement ce qui concerne le metier
+# model pour l'acces aux don�es: fichier, BDD, json...
+# model pour le Traitement
+7: -> livre
+
+Validateur:
+4: ?? => configuration
+
+Repository : (Doctrine ou autre)
+5
+
+Vues : 
+2, 
+7: controleur -> livre,
+8: prog evenmentiel -> user
+
+Contr�leur: 
+3, 
+6: header, ????????
+7: mod�l -> livre
+
+
+Service : 
+# une fonctionalit� tranverse
+1: Router ??? => mapping par configuration qui d�pend du frammework
+5: array, 
+
+
+Configuration
+1, 4
+
+prog evenmentiel
+8: -> user
+
+
+-------------------------------------------------------
+TTFB r�ferencement
+
+Gestionnaire des evenment est sur le d�rroulement de l'application
+$sdfqsdfqsd ->  dispatch('evenmet');
+
+Serivice manager / controler
+
+quand on d�clare une classe, PHP lui attribut des methodes vides implicites
+
+pour verifier quel type de classe on � a faire instantOff
+
+
+securisation par l'acces force-brut de session -> pour éviter l'usurpation de session
+Renouvelement le dossier [PHPID] de session pour éviter les probabilitées de l'usurpation
