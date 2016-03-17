@@ -12,26 +12,12 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/EWE02/composer.phar/" />
           <root url="phar://$MODULE_DIR$/EXE01/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/EXE02/composer.phar/" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/EWE02/composer.phar/" />
           <root url="phar://$MODULE_DIR$/EXE01/composer.phar/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHP">
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/EXE01/vendor/composer" />
-          <root url="file://$MODULE_DIR$/EXE01/vendor/squizlabs/php_codesniffer" />
-          <root url="file://$MODULE_DIR$/EXE01/vendor/symfony/yaml" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/EXE01/vendor/composer" />
-          <root url="file://$MODULE_DIR$/EXE01/vendor/squizlabs/php_codesniffer" />
-          <root url="file://$MODULE_DIR$/EXE01/vendor/symfony/yaml" />
+          <root url="phar://$MODULE_DIR$/EXE02/composer.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
