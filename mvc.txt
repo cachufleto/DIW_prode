@@ -91,3 +91,5 @@ pour verifier quel type de classe on � a faire instantOff
 
 securisation par l'acces force-brut de session -> pour éviter l'usurpation de session
 Renouvelement le dossier [PHPID] de session pour éviter les probabilitées de l'usurpation
+
+test git
